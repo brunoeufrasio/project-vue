@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="logado">Usuário logado: {{ nome }}</p>
+        <p v-else-if="anonimo">Navegando como Anônimo</p>
+        <p v-else>Nenhum usuário logado</p>
+        <button @click="logado = !logado">{{ logado ? 'sair' : 'entrar'}}</button>
+        <input type="checkbox" name="Habilita Modo Anônimo" v-model="anonimo">
+    </div> 
+    
+    <script>
+        new Vue({
+            el:'#app',
+            data:{
+                nome: 'Bruno Eufrasio',
+                logado: false,
+                anonimo: true
+            }
+        })
+    </script>
+</body>
+</html>
